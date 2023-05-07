@@ -54,3 +54,165 @@
 // 	}
 // }
 // logItems(names);
+
+/******************************************************************/
+
+// Напишіть функцію min(a, b), яка повертає
+// меньше з чисел a, b
+//Додати перевірку, що функція отримує числа
+
+// function min(a, b) {
+//   if (typeof a === "number" && typeof b === "number") return Math.min(a, b);
+//   return "Значення повинні бути числами";
+// }
+// console.log(min(15, 5));
+
+/***************************************************************************/
+
+// Написати ф-цію, яка прибиратиме з масиву всі значення, які перетворюються на false
+// undefined, null, false, '', 0, NaN
+
+// const array = [
+//   1,
+//   0,
+//   54,
+//   "doc",
+//   null,
+//   "jpg",
+//   undefined,
+//   "",
+//   "png",
+//   "exe",
+//   false,
+//   "mp4",
+//   NaN,
+//   "hbs",
+// ];
+
+// function deleteFalse(array) {
+//   const newArray = [];
+//   for (const el of array) {
+//     if (!el) {
+//       continue;
+//     }
+//     newArray.push(el);
+//   }
+//   return newArray;
+// }
+
+// console.log(deleteFalse(array));
+
+/********************************************************************************/
+
+// Наступна функція повертає true, якщо параметр age більше 18.
+// В іншому випадку вона запитує підтвердження через confirm і повертає його результат:
+
+// const age = prompt("Enter your age");
+
+// function checkAge(age) {
+//   if (age < 18) {
+//     const isAdult = confirm("Маєте 18 років?");
+//     return isAdult;
+//   }
+//   return age >= 18;
+// }
+
+// console.log(checkAge(age));
+
+/*************************************************************************************/
+//Напишіть функції для роботи з масивом
+//add(name) додає ім'я до кінця колекції
+//remove(name) видаляє ім'я із колекції
+//update(oldName, newName) змінює ім'я на нове
+
+// const names = ["Alla", "Petro", "Max", "Olena", "Boris"];
+// function add(name) {
+//   names.push(name);
+//   return names;
+// }
+// function remove(name) {
+//   const index = names.indexOf(name);
+//   if (index === -1) return "Такого імені немає!";
+//   names.splice(index, 1);
+//   return names;
+// }
+// function update(oldName, newName) {
+//   const index = names.indexOf(oldName);
+//   if (index === -1) return "Такого імені немає!";
+//   names.splice(index, 1, newName);
+//   return names;
+// }
+
+// console.log(add("Bohdana"));
+// console.log(remove("Max"));
+// console.log(update("Olena", "Olha"));
+// console.log(remove("Kate"));
+
+/****************************************************************************************/
+
+//Напиши скрипт, який для об'єкту user,
+//послідовно:
+//1 додасть поле mood зі значенням 'happy'
+//2 замінить hobby на 'skydiving'
+//3 замінить значення premium на false
+//4 виводить зміст об'єкта users у форматі
+//ключ:значення використовуя Object.keys() та for...of
+// const user = {
+//   name: "John",
+//   age: 20,
+//   hobby: "tenis",
+//   premium: true,
+// };
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
+
+// const userKeys = Object.keys(user);
+// for (const key of userKeys) {
+//   console.log(`${key} : ${user[key]}`);
+// }
+
+/*****************************************************************************************/
+
+// У нас є об'єкт, в якому зберігаються зарплати
+//нашої команди
+//Напишіть код для додавання усіх зарплат та
+//збережіть його результат в змінній sum.
+//Якщо об'єкт salaries пустий, то результат має бути 0
+
+// const salaries = {
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
+// let sum = 0;
+// const values = Object.values(salaries);
+// for (const salary of values) {
+//   sum += salary;
+// }
+// console.log(sum);
+
+/*******************************************************************************/
+
+//3. Напишіть ф-цію calcTotalPrice(stones, stonesName),
+//яка приймає массив об'єктів і
+//рядок з назвами каміння.
+//Функція рахує і повертає загальну вартість каменів
+//з таким ім'ям, ціною та кількістю з об'єкта
+
+// const stones = [
+//   { name: "Смарагд", price: 1300, quantity: 4 },
+//   { name: "Діамант", price: 2700, quantity: 6 },
+//   { name: "Сапфір", price: 400, quantity: 7 },
+//   { name: "Щебінь", price: 150, quantity: 100 },
+// ];
+// function calcTotalPrice(stones, stonesName) {
+//   let totalPrice = 0;
+//   for (const stone of stones) {
+//     if (stone.name === stonesName) {
+//       totalPrice += stone.price * stone.quantity;
+//     }
+//   }
+//   return totalPrice;
+// }
+// console.log(calcTotalPrice(stones, "Сапфір"));

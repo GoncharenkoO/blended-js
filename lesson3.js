@@ -371,3 +371,29 @@ const users = [
 //"Worker <name> has salary <salary> dollars"
 //Створити клас TopLevelWorker, у якого є властивість position
 //і який успадковує клас Worker, додаючи метод getPosition
+class Worker {
+	constructor( name, age, salary ) {
+		this.name = name;
+		this.age = age;
+		this.salary = salary;
+	}
+	getSalary() {
+		return `Worker ${this.name} has salary ${this.salary} dollars`;
+	}
+}
+
+class TopLevelWorker extends Worker {
+	constructor(name, age, salary, position) {
+		super(name, age, salary);
+		this.position = position;
+	}
+  getPosition() {
+      return `${this.name} works as ${this.position}`;
+  }
+}
+
+const worker = new TopLevelWorker( "Poly", 20, 5000, 'manager');
+console.log(worker);
+console.log(worker.getSalary());
+console.log(worker.name);
+console.log(worker.getPosition());

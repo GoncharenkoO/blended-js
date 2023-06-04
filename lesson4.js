@@ -126,4 +126,74 @@
 //   }
 // }
 
-/********************************************************************/ 
+/********************************************************************/
+
+// Завдання 6
+// Натиснувши кнопку "Подвоювати", збільшити значення
+// у кожному елементі списку у 2 рази
+
+// const items = document.querySelectorAll(".listItem");
+// const button = document.getElementById("double");
+
+// button.addEventListener("click", doubleItems);
+
+// function doubleItems() {
+// 	items.forEach((item) => {
+// 		item.textContent *= 2;
+// 	});
+// }
+
+/********************************************************************** */
+
+/*
+Завдання 13
+Коло має зникати при наведенні на нього.
+При цьому позиція сусідніх кіл має залишатися незмінною.
+*/
+
+// const items = document.querySelectorAll(".gridItem");
+
+// items.forEach((item) => {
+// 	item.addEventListener("mouseenter", () => item.classList.add("hide"));
+// 	item.addEventListener("mouseleave", () => item.classList.remove("hide"));
+// });
+
+/************************************************************************************* */
+
+// Завдання 14
+// Написати функцію, яка буде створювати список подій клавіатури event.key та event.code
+// Додати класи на список eventList, на елементи eventCode та eventKey
+
+// const div = document.querySelector("div");
+
+// document.addEventListener("keydown", ({ key, code }) => {
+// 	const markup = `
+//     <ul class='eventList'>
+//       <li class='eventKey'><b>Key</b>: ${key}</li>
+//       <li class='eventCode'><b>Code</b>: ${code}</li>
+//     </ul>
+// `;
+//   div.insertAdjacentHTML("afterbegin", markup);
+// });
+
+/**************************************************************************** */
+
+// Завдання 12
+// Клік по кнопці замінює символ першого поля введення на
+// символ з другого поля введення в усьому тексті.
+// Якщо одне з полів порожнє, викликай alert із проханням заповнити їх.
+//
+
+const text = document.querySelector(".text");
+const input1 = document.getElementById("from");
+const input2 = document.getElementById("to");
+const button = document.getElementById("replaceButton");
+
+button.addEventListener("click", buttonReplace);
+
+function buttonReplace() {
+	if (input1.value === "" || input2.value === "") return alert("Заповніть поля");
+	text.textContent = text.textContent.replaceAll(input1.value, input2.value);
+	input1.value = "";
+	input2.value = "";
+}
